@@ -1,0 +1,270 @@
+.container-maps{
+    
+    background-image: url(../assets/iphone-cable-maps.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+
+.maps-screen{
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 653px;
+}
+
+                /* ======  MAP HEADER ====== */
+.map-header{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin: 0px 5px 0px 5px;
+padding-top: 10px;
+
+} 
+#arrow-back{
+width: 10px;
+margin: 8px 5px 0 5px;
+}
+#location-icon{
+margin: 10px 10px 10px 10px;
+height: 60px;
+}
+#more-icon{
+width: 15px;
+margin: 20px 12px 10px 12px;
+}
+#switch-icon{
+padding-top: 10px;
+/* width: 15px; */
+height: 30px;
+margin: 10px 10px 10px 10px;
+}
+.map-header-icon-start{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+margin-right: 5px;
+
+}
+.map-header-icon-center{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+width: 100%;
+height: 90px;
+padding-top: 5px;
+}
+.map-header-icon-end{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+margin-left: 5px;
+}
+
+
+
+.map-transport-container{
+color: #1f5ec2;
+font-weight: bold;
+display: flex;
+flex-direction: row;
+margin-left: 2px;
+overflow: hidden;
+margin-right: 2px;
+
+
+}
+
+
+.map-transport-selected{
+color: #1f5ec2;
+font-weight: bold;
+display: flex;
+background-color:#ebeefd;
+flex-direction: row;
+margin: 5px 0px 5px 0px;
+padding: 7px 10px;
+border-radius: 15px;
+min-width: fit-content;
+}
+.map-transport{
+color: #000;
+font-weight:bold;
+display: flex;
+flex-direction: row;
+margin: 5px 0px 5px 0px;
+padding: 7px 10px;
+border-radius: 15px;
+min-width: fit-content;
+
+
+}
+.map-transport-container img{
+height: 15px;
+margin-right: 9px;
+
+}
+
+                /* ======  MAP  ====== */
+.map{
+height: 382px;
+width: 322px;
+position: relative;
+}
+
+.marker-label{
+margin-top: -30px;
+}
+
+
+.map-marker {
+margin-top: -30px;
+}
+
+.address {
+box-sizing: border-box;
+width: 240px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+border-radius: 4px;
+font-size: 14px;
+
+}
+
+
+.addressField {
+box-sizing: border-box;
+border: 1px solid transparent;
+width: 100%;
+height: 32px;
+margin-bottom: 8px;
+padding: 0 12px;
+border-radius: 4px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+font-size: 14px;
+outline: none;
+text-overflow: ellipses;
+/* z-index: 5; */
+
+}
+
+                /* ======  MAP FOOTER ====== */
+
+.map-footer-info{
+background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0.5) 0%,
+    rgba(167, 167, 167, 0.5) 100%
+);
+width: 323px;
+height: 132px;
+padding: 10px;
+border-bottom-left-radius: 50px ;
+border-bottom-right-radius: 50px ;
+box-shadow:  2px 0px 3px 3px #00000046; 
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding-bottom: 30px;
+color: black;
+
+}
+
+.map-footer-info h1{
+font-size: 1.2rem;
+}
+.map-footer-info p{
+font-size: .8rem;
+}
+.footer-btn img, .footer-btn-selected img{
+height: 18px;
+margin-right: 15px;
+
+}
+
+
+.route-info{
+margin-left: 12px;
+}
+.footer-btns{
+margin: 0 10px 0 10px;}
+.footer-btn-selected{
+background-color: #1b6cf3 ;
+color: #fff;
+border-radius: 10px;
+padding: 10px;
+width: 100%;
+font-size: 1.2rem;
+margin-top: 10px;
+
+}
+
+.home-button-maps{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 65%;
+position: absolute;
+top: 664px;
+right: 118px;
+bottom: px;
+left: 0;
+margin: auto;
+}
+
+
+
+.back-btn-maps{
+
+background-color: #5a5858;
+height: 5px;
+width: 115px; 
+margin-top: 36px;
+border-style: none;
+border-radius: 10px;
+position: absolute;
+z-index: 0;
+transition: ease-in-out 0.2s;
+
+}
+.back-btn-maps:hover{
+background-color: #444242;
+cursor: pointer ;
+transition: ease-in-out 0.2s;
+}
+
+input::placeholder {
+    color: #000;
+}
+
+
+                /* ======  MAP MEDIAS QUERIES ====== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

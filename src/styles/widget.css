@@ -1,0 +1,138 @@
+/* ================= Stocks =================*/
+
+.stocks-widget{
+    width: 100%;
+    height: 110px ;
+    margin-left: 10px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0px;
+
+}
+.stocks-box-widget{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.stocks-box-widget + .stocks-box-widget{
+    border-top: 1px solid rgba(105, 102, 102, 0.349);
+}
+.stocks-box-widget p{
+    font-size: 0.7rem;
+    color: #a7a4a4;
+}
+
+.stocks-name-widget{
+    text-align: left;
+}
+.stocks-name-widget h5{
+    font-size: 11px;
+}
+.stocks-name-widget p{
+    font-size: 9px;
+}
+.stocks-negative-widget{
+    background-color: #fe3c2d;
+    text-align: end;
+    padding: 2px 2px 2px 0px;
+    border-radius: 5px;
+    width: 45px;
+}
+.stocks-positive-widget{
+    background-color: #35c95a;
+    text-align: end;
+    padding: 2px 2px 2px 0px;
+    border-radius: 5px;
+    width: 45px;
+}
+.stocks-positive-widget p{
+    color: #35c95a;
+    font-weight: bold;
+}
+.stocks-price-widget{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.9rem;
+    padding-right: 10px;
+    
+
+}
+
+.stocks-price-widget p{
+    color: #fff;
+}
+
+
+/* ================= cripto =================*/
+
+.cripto-widget{
+    width: 100%;
+    height: 110px ;
+    margin-left: 10px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0px;
+
+}
+.cripto-box-widget{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.cripto-box-widget + .cripto-box-widget{
+    border-top: 1px solid rgba(105, 102, 102, 0.349);
+}
+.cripto-box-widget p{
+    font-size: 0.7rem;
+    color: #a7a4a4;
+}
+
+.cripto-name-widget{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.cripto-name-widget h5{
+    font-size: 11px;
+}
+.cripto-name-widget p{
+    font-size: 9px;
+}
+.cripto-img-widget img{
+    display: flex;
+}
+.cripto-img-widget img{
+    width: 25px;
+}
+
+#cripto-positive-widget {
+    color: #35cf5b;    font-weight: bold;
+}
+#cripto-negative-widget {
+    
+    color: #fe3c2d;
+    font-weight: bold;
+}
+.cripto-price-widget{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.9rem;
+    padding-right: 10px;
+}
+.cripto-price-widget p{
+    color: #fff;
+}
+
+

@@ -1,0 +1,128 @@
+
+.container-memory-game{
+    background-image: url(../assets/iphone-cable-memory-game.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 350px;
+    padding: 10px;
+    height: 925px
+    
+  }
+.mg-container{
+   margin-top: 30px ;
+   text-align: center;
+}
+.mg-title{
+    font-family: 'Righteous', cursive;
+    margin-bottom: 50px;
+    color: #087394d3;
+}
+
+  .mg-banner{
+    margin-top: 25px;
+    
+}
+.mg-banner>img{
+    max-width: 300px;
+}
+
+.mg-card{
+    width: 65px;
+    height: 65px;
+    position: relative;
+
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: transform .5s;
+   transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.mg-card-back, .mg-card-front{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.45);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.mg-icon{
+    width:50px;
+    height: 50px;
+    
+   
+    
+}
+
+.mg-flip{
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+.mg-card-front{
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background-color: #1866c56c;
+    /* background-color: #18345767; */
+
+}
+
+.mg-card-back{
+    color: #101c2c;
+    background-color: #05c3ff;
+    font-size: 30px;
+    /* display: none; */
+
+}
+
+
+.mg-gameOver{
+    position: absolute;
+    border-radius: 30px;
+    margin-left: 10px;
+    width: 305px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: 18px;
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 200px;
+    
+}
+
+.mg-restart{
+    padding: 15px;
+    font-size: 20px;
+    background-color: rgb(235, 235, 32);
+    border: none;
+    border-radius:10px;
+    margin-top: 30px;
+}
+
+.mg-gameBoard{
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap:10px
+}
+
+.mg-home-button-adjust{
+    position: absolute;
+    top: -3px;
+    right: 0;   
+    left: 0;
+}

@@ -1,0 +1,728 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  width: auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* background-color: #000; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Oxygen', 'Helvetica Neue',   sans-serif;
+  color: #e3e3e7;
+  background-image: url(./assets/back.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 2840px ;  
+  background-color: #000;
+}
+.container{
+  background-image: url(./assets/iphone-cable.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+ padding: 7px 20px;
+}
+
+
+
+                    
+
+                    /* ======  PHONE HEADER ====== */
+.header{
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600; 
+  color: #fff;
+  z-index:3 ;
+}
+/* class black-text for component HeaderBlack.jsx*/
+.black-text{
+  color: #000;
+}
+
+#time{
+  margin-top: 5px;
+  padding-left: 30px;
+  font-size: 25px;
+  z-index: 3;
+
+}
+
+.header-right{
+  padding-right: 10px;
+  height: 45px;
+  padding-top: 7px; 
+  z-index: 3;
+
+
+}
+.header-right img{
+  padding-right: 2px;
+  height: 18px;
+  z-index: 3;
+
+
+
+}
+
+                    /* ====== APPS AND PAGES ====== */
+
+.apps{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;  
+}
+
+.apps-screen{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 485px ;
+}
+.apps-screen a{
+  text-decoration: none;
+  color: white;
+  
+}
+
+.pages{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px; 
+  height: 25px;
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+  border-radius: 20px;
+ 
+}
+
+.widget{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  height: 120px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(27, 26, 27);
+  border-radius: 20px;
+}
+
+.apps-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
+  width: 100%;
+  min-width: 324px;
+     
+
+}
+.apps-line-no-app{
+  min-height: 88px;
+}
+
+.apps-text{
+  width: 81px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.img-hover :hover{
+  transform: scale(1.1);
+  transition: 150ms linear;
+}
+
+.img-hover :not(:hover){
+  transform: scale(1);
+  transition: 50ms;
+}
+
+.calendarApp{
+ background-color: white;
+ height: 56px;
+ width: 56px;
+ margin-left: auto;
+ margin-right: auto;
+ border-radius: 12px;
+ margin-bottom: 5px;
+ 
+
+}
+.calendarAppHover :hover{
+ transform: scale(1.07);
+  transition: 150ms linear;
+}
+.calendarAppHover :not(:hover){
+  transform: scale(1);
+  transition: 50ms;
+}
+.calendarApp a{
+  text-decoration: none;
+}
+.weekDay{
+  padding-top: 4px;
+  color: red;
+  font-size: 10px;
+}
+.day{
+  color: black;
+  font-size: 35px;
+  margin-top: -7px;
+  
+}
+
+
+/* Slider and buttons animations */
+.slide{
+  transform: translate(-325px, 0px);
+  transition: ease-out 0.6s;}
+
+.slide2{
+  transform: translate(-324px, 0px);
+  transition: ease-out 0.6s;
+}
+
+.slide3{
+  transform: translate(0px, 0px);
+  transition: ease-out 0.6s;
+}
+
+.slide4{
+  transform: translate(0px, 0px);
+  transition: ease-out 0.6s;
+}
+
+.btn-slide-actived{
+  width: 9px;
+  height: 9px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 5px;
+  
+  transform: scale(1.4);
+  transition: 150ms ease-in-out;
+  
+}
+
+.btn-slide-disabled{
+  width: 9px;
+  height: 9px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  margin: 5px;
+  
+  transform: scale(1.1);
+  transition: 150ms ease-in-out;
+  
+}
+
+.btn-slide-disabled:hover, .btn-slide-actived:hover{
+  transform: scale(1.4);
+  transition: 200ms linear;
+}
+
+
+
+                    /* ====== HOME BUTTON ====== */
+.home-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  position: absolute;
+  top: 667px;
+  right: 118px;
+  left: 0;
+  margin: auto;
+}
+
+.back-btn{
+  background-color: #d9d9d9;
+  height: 5px;
+  width: 115px; 
+  margin-top: 36px;
+  border-style: none;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 0;
+}
+
+
+
+.back-btn:hover{
+  background-color: #c9c0c0;
+  cursor: pointer ;
+}
+
+
+.home-button-sticky2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  right: 0px;
+  left: 0px;
+  bottom: 90px;
+  margin-right: 120px;
+  z-index: 1;
+
+ 
+}
+
+
+                    /* ====== MEDIA QUERIES ====== */
+
+
+
+/* =====================================================================*/
+/* =====================================================================*/
+/* =====================================================================*/
+/* @media screen and (max-width: 369px) {
+.App {
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    color: #e3e3e7;
+    background-image: url(./assets/back.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+  
+}
+.container{
+  background-image: url(./assets/iphone-cable.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 15px;
+
+}
+
+
+
+                     */
+
+                    /* ======  PHONE HEADER ====== */
+/* .header{
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600; 
+  color: #fff;
+  z-index:3 ;
+} */
+/* class black-text for component HeaderBlack.jsx*/
+/* .black-text{
+  color: #000;
+}
+
+#time{
+  margin-top: 5px;
+  padding-left: 30px;
+  font-size: 25px;
+  z-index: 3;
+
+}
+
+
+.header-right{
+  padding-right: 10px;
+  height: 45px;
+  padding-top: 7px; 
+  z-index: 3;
+
+
+}
+.header-right img{
+  padding-right: 2px;
+  height: 18px;
+  z-index: 3;
+
+
+
+} */
+
+                    /* ====== APPS AND PAGES ====== */
+
+/* .apps{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;  
+}
+
+.apps-screen{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 485px ;
+}
+.apps-screen a{
+  text-decoration: none;
+  color: white;
+  
+}
+
+.pages{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px; 
+  height: 20px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+  border-radius: 20px;
+ 
+}
+
+.apps-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
+  width: 100%;   
+
+}
+
+.apps-text{
+  width: 81px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.img-hover :hover{
+  transform: scale(1.1);
+  transition: 150ms linear;
+}
+
+.img-hover :not(:hover){
+  transform: scale(1);
+  transition: 50ms;
+}
+
+.calendarApp{
+ background-color: white;
+ height: 56px;
+ width: 56px;
+ margin-left: auto;
+ margin-right: auto;
+ border-radius: 12px;
+ margin-bottom: 5px;
+ 
+
+}
+.calendarAppHover :hover{
+ transform: scale(1.07);
+  transition: 150ms linear;
+}
+.calendarAppHover :not(:hover){
+  transform: scale(1);
+  transition: 50ms;
+}
+.calendarApp a{
+  text-decoration: none;
+}
+.weekDay{
+  padding-top: 4px;
+  color: red;
+  font-size: 10px;
+}
+.day{
+  color: black;
+  font-size: 35px;
+  margin-top: -7px;
+  
+}
+ */
+
+/* Slider and buttons animations */
+/* .slide{
+  transform: translate(-312px, 0px);
+  transition: ease-in-out 0.4s;}
+
+.slide2{
+  transform: translate(-325px, 0px);
+  transition: ease-in-out 0.4s;
+}
+
+.slide3{
+  transform: translate(0px, 0px);
+  transition: ease-in-out 0.4s;
+}
+
+.slide4{
+  transform: translate(0px, 0px);
+  transition: ease-in-out 0.4s;
+}
+
+.btn-slide-actived{
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 5px;
+  
+    transform: scale(1.5);
+    transition: 150ms ease-in-out;
+  
+}
+
+.btn-slide-disabled{
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  margin: 5px;
+  
+    transform: scale(1.2);
+    transition: 150ms ease-in-out;
+  
+}
+
+.btn-slide-disabled:hover, .btn-slide-actived:hover{
+  transform: scale(1.5);
+  transition: 150ms linear;
+}
+
+ */
+
+                    /* ====== HOME BUTTON ====== */
+/* .home-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  position: absolute;
+  top: 667px;
+  right: 118px;
+  left: 0;
+  margin: auto;
+}
+.back-btn{
+  background-color: #d9d9d9;
+  height: 5px;
+  width: 115px; 
+  margin-top: 36px;
+  border-style: none;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 0;
+}
+
+.back-btn:hover{
+  background-color: #c9c0c0;
+  cursor: pointer ;
+}
+
+.home-button-sticky{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 65%;
+  position: sticky;
+  top: 0px;
+  right: 318px;
+  bottom: -300px;
+  left: 0;
+ 
+}
+.home-button-sticky2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  right: 0px;
+  left: 0px;
+  bottom: 90px; */
+  /* margin-top: -93px; */
+  /* margin-right: 120px;
+  z-index: 1;
+
+ 
+}
+
+
+
+  .container{
+    background-size: 350px;
+    background-position: top ;
+    height: 925px
+    
+}
+
+
+.screen{
+  width: 325px;
+  margin: auto;
+
+}
+.header{
+  padding: 5px;
+  z-index: 3;
+
+}
+.header-icons{
+  padding-right: 15px; 
+  z-index: 3;
+      
+}
+.header-icons img{
+  margin-top: 7px;
+  padding-right: 6px;
+  height: 13px;
+  z-index: 3;
+}
+
+#time{
+  margin-top: 9px;
+  padding-left: 30px;
+  font-size: 16px;
+}
+
+.apps{
+  margin-top: 30px;
+}
+
+.apps img, .apps-bottom img{
+  width: 56px;
+  border-radius: 12px;
+}
+
+.apps-text{
+  margin-bottom: 13px;
+  font-size: .7rem;
+}
+.apps-bottom{
+
+  margin-top:10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80px;
+  background-color: gray;
+  border-radius: 25px;
+}
+
+}
+ */
+
+/* =====================================================================*/
+/* =====================================================================*/
+/* =====================================================================*/
+@media screen and (min-width: 370px) {
+  .container{
+    background-size: 350px;
+    background-position: top ;
+    height: 925px
+    
+}
+
+
+.screen{
+  width: 325px;
+  margin: auto;
+
+}
+.header{
+  padding: 5px;
+  z-index: 3;
+
+}
+.header-icons{
+  padding-right: 15px; 
+  z-index: 3;
+      
+}
+.header-icons img{
+  margin-top: 7px;
+  padding-right: 6px;
+  height: 13px;
+  z-index: 3;
+}
+
+#time{
+  margin-top: 5px;
+  padding-left: 30px;
+  font-size: 16px;
+}
+
+.apps{
+  margin-top: 30px;
+}
+
+.apps img, .apps-bottom img{
+  width: 56px;
+  border-radius: 12px;
+}
+
+.apps-text{
+  margin-bottom: 13px;
+  font-size: .7rem;
+}
+.apps-bottom{
+
+  margin-top:10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80px;
+  background-color: gray;
+  border-radius: 25px;
+}
+
+}
