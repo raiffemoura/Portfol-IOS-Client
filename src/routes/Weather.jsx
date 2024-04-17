@@ -354,6 +354,7 @@ const Weather = () => {
                   loop
                   muted
                   className="weather-video"
+                  playsInline
                 >
                   <source
                     src={
