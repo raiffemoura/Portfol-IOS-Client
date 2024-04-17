@@ -17,111 +17,99 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', 'Oxygen', 'Helvetica Neue',   sans-serif;
+  font-family: 'Segoe UI', 'Oxygen', 'Helvetica Neue', sans-serif;
   color: #e3e3e7;
   background-image: url(./assets/back.png);
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 2840px ;  
+  background-size: 2840px;
   background-color: #000;
 }
-.container{
+.container {
   background-image: url(./assets/iphone-cable.png);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
- padding: 7px 20px;
+  padding: 7px 20px;
 }
 
-
-
-                    
-
-                    /* ======  PHONE HEADER ====== */
-.header{
+/* ======  PHONE HEADER ====== */
+.header {
   padding: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-weight: 600; 
+  font-weight: 600;
   color: #fff;
-  z-index:3 ;
+  z-index: 3;
 }
 /* class black-text for component HeaderBlack.jsx*/
-.black-text{
+.black-text {
   color: #000;
 }
 
-#time{
+#time {
   margin-top: 5px;
   padding-left: 30px;
   font-size: 25px;
   z-index: 3;
-
 }
 
-.header-right{
+.header-right {
   padding-right: 10px;
   height: 45px;
-  padding-top: 7px; 
+  padding-top: 7px;
   z-index: 3;
-
-
 }
-.header-right img{
+.header-right img {
   padding-right: 2px;
   height: 18px;
   z-index: 3;
-
-
-
 }
 
-                    /* ====== APPS AND PAGES ====== */
+/* ====== APPS AND PAGES ====== */
 
-.apps{
+.apps {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 100%;  
+  width: 100%;
 }
 
-.apps-screen{
+.apps-screen {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  height: 485px ;
+  height: 485px;
 }
-.apps-screen a{
+.apps-screen a {
   text-decoration: none;
   color: white;
-  
 }
 
-.pages{
+.pages {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 45px; 
+  margin-top: 45px;
   height: 25px;
   width: 70px;
   margin-left: auto;
   margin-right: auto;
   background-color: gray;
   border-radius: 20px;
- 
 }
 
-.widget{
+.widget {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
+
   height: 120px;
   width: 90%;
   margin-left: auto;
@@ -130,126 +118,118 @@ body {
   border-radius: 20px;
 }
 
-.apps-line{
+.apps-line {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center; 
+  align-items: center;
   width: 100%;
   min-width: 324px;
-     
-
 }
-.apps-line-no-app{
+.apps-line-no-app {
   min-height: 88px;
 }
 
-.apps-text{
+.apps-text {
   width: 81px;
   text-align: center;
   padding: 0px;
   margin: 0px;
 }
 
-.img-hover :hover{
+.img-hover :hover {
   transform: scale(1.1);
   transition: 150ms linear;
 }
 
-.img-hover :not(:hover){
+.img-hover :not(:hover) {
   transform: scale(1);
   transition: 50ms;
 }
 
-.calendarApp{
- background-color: white;
- height: 56px;
- width: 56px;
- margin-left: auto;
- margin-right: auto;
- border-radius: 12px;
- margin-bottom: 5px;
- 
-
+.calendarApp {
+  background-color: white;
+  height: 56px;
+  width: 56px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  margin-bottom: 5px;
 }
-.calendarAppHover :hover{
- transform: scale(1.07);
+.calendarAppHover :hover {
+  transform: scale(1.07);
   transition: 150ms linear;
 }
-.calendarAppHover :not(:hover){
+.calendarAppHover :not(:hover) {
   transform: scale(1);
   transition: 50ms;
 }
-.calendarApp a{
+.calendarApp a {
   text-decoration: none;
 }
-.weekDay{
+.weekDay {
   padding-top: 4px;
   color: red;
   font-size: 10px;
 }
-.day{
+.day {
   color: black;
   font-size: 35px;
   margin-top: -7px;
-  
 }
 
-
 /* Slider and buttons animations */
-.slide{
+.slide {
   transform: translate(-325px, 0px);
-  transition: ease-out 0.6s;}
+  transition: ease-out 0.6s;
+}
 
-.slide2{
+.slide2 {
   transform: translate(-324px, 0px);
   transition: ease-out 0.6s;
 }
 
-.slide3{
+.slide3 {
   transform: translate(0px, 0px);
   transition: ease-out 0.6s;
 }
 
-.slide4{
+.slide4 {
   transform: translate(0px, 0px);
   transition: ease-out 0.6s;
 }
 
-.btn-slide-actived{
-  width: 9px;
-  height: 9px;
+.btn-slide-actived {
+  width: 11px;
+  height: 11px;
   background-color: white;
   border-radius: 50%;
   margin: 5px;
-  
+
   transform: scale(1.4);
   transition: 150ms ease-in-out;
-  
 }
 
-.btn-slide-disabled{
-  width: 9px;
-  height: 9px;
+.btn-slide-disabled {
+  width: 10px;
+  height: 10px;
   background-color: white;
   border-radius: 50%;
   opacity: 0.5;
   margin: 5px;
-  
+
   transform: scale(1.1);
   transition: 150ms ease-in-out;
-  
 }
 
-.btn-slide-disabled:hover, .btn-slide-actived:hover{
+.btn-slide-disabled:hover,
+.btn-slide-actived:hover {
   transform: scale(1.4);
   transition: 200ms linear;
 }
 
-
-
-                    /* ====== HOME BUTTON ====== */
-.home-button{
+/* ====== HOME BUTTON ====== */
+.home-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -262,10 +242,10 @@ body {
   margin: auto;
 }
 
-.back-btn{
+.back-btn {
   background-color: #d9d9d9;
   height: 5px;
-  width: 115px; 
+  width: 115px;
   margin-top: 36px;
   border-style: none;
   border-radius: 10px;
@@ -273,15 +253,12 @@ body {
   z-index: 0;
 }
 
-
-
-.back-btn:hover{
+.back-btn:hover {
   background-color: #c9c0c0;
-  cursor: pointer ;
+  cursor: pointer;
 }
 
-
-.home-button-sticky2{
+.home-button-sticky2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -291,14 +268,9 @@ body {
   bottom: 90px;
   margin-right: 120px;
   z-index: 1;
-
- 
 }
 
-
-                    /* ====== MEDIA QUERIES ====== */
-
-
+/* ====== MEDIA QUERIES ====== */
 
 /* =====================================================================*/
 /* =====================================================================*/
@@ -339,7 +311,7 @@ body {
 
                      */
 
-                    /* ======  PHONE HEADER ====== */
+/* ======  PHONE HEADER ====== */
 /* .header{
   padding: 16px;
   display: flex;
@@ -381,7 +353,7 @@ body {
 
 } */
 
-                    /* ====== APPS AND PAGES ====== */
+/* ====== APPS AND PAGES ====== */
 
 /* .apps{
   margin-top: 30px;
@@ -532,7 +504,7 @@ body {
 
  */
 
-                    /* ====== HOME BUTTON ====== */
+/* ====== HOME BUTTON ====== */
 /* .home-button{
   display: flex;
   flex-direction: row;
@@ -581,8 +553,8 @@ body {
   right: 0px;
   left: 0px;
   bottom: 90px; */
-  /* margin-top: -93px; */
-  /* margin-right: 120px;
+/* margin-top: -93px; */
+/* margin-right: 120px;
   z-index: 1;
 
  
@@ -661,68 +633,62 @@ body {
 /* =====================================================================*/
 /* =====================================================================*/
 @media screen and (min-width: 370px) {
-  .container{
+  .container {
     background-size: 350px;
-    background-position: top ;
-    height: 925px
-    
-}
+    background-position: top;
+    height: 925px;
+  }
 
+  .screen {
+    width: 325px;
+    margin: auto;
+  }
+  .header {
+    padding: 5px;
+    z-index: 3;
+  }
+  .header-icons {
+    padding-right: 15px;
+    z-index: 3;
+  }
+  .header-icons img {
+    margin-top: 7px;
+    padding-right: 6px;
+    height: 13px;
+    z-index: 3;
+  }
 
-.screen{
-  width: 325px;
-  margin: auto;
+  #time {
+    margin-top: 5px;
+    padding-left: 30px;
+    font-size: 16px;
+  }
 
-}
-.header{
-  padding: 5px;
-  z-index: 3;
+  .apps {
+    margin-top: 30px;
+  }
 
-}
-.header-icons{
-  padding-right: 15px; 
-  z-index: 3;
-      
-}
-.header-icons img{
-  margin-top: 7px;
-  padding-right: 6px;
-  height: 13px;
-  z-index: 3;
-}
+  .apps img,
+  .apps-bottom img {
+    width: 56px;
+    border-radius: 12px;
+  }
 
-#time{
-  margin-top: 5px;
-  padding-left: 30px;
-  font-size: 16px;
-}
-
-.apps{
-  margin-top: 30px;
-}
-
-.apps img, .apps-bottom img{
-  width: 56px;
-  border-radius: 12px;
-}
-
-.apps-text{
-  margin-bottom: 13px;
-  font-size: .7rem;
-}
-.apps-bottom{
-
-  margin-top:10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 80px;
-  background-color: gray;
-  border-radius: 25px;
-}
-
+  .apps-text {
+    margin-bottom: 13px;
+    font-size: 0.7rem;
+  }
+  .apps-bottom {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    background-color: gray;
+    border-radius: 25px;
+  }
 }

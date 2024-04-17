@@ -21,7 +21,6 @@ const Weather = () => {
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
   const [dataSuggestions, setDataSuggestions] = useState([])
-  const [temp, setTemp] = useState(true)
   //   const [conditionChanged, setConditionChanged] = useState(false)
 
   const { t } = useTranslation()
@@ -385,7 +384,11 @@ const Weather = () => {
                   </video>
                 </>
               ) : (
-                <img className="img-temp" src={iconConfig.temp}></img>
+                <img
+                  className="img-temp"
+                  src={iconConfig.temp}
+                  alt="clima"
+                ></img>
               )}
 
               <div className="weather-input">

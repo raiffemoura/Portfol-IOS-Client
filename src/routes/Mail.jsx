@@ -97,7 +97,11 @@ export default function Mail() {
                 required="required"
               />
             </div>
-            <input type="hidden" name="_next" value="https://localhost:3000" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://portfol-ios.vercel.app"
+            />
             {line()}
             <textarea
               className="mail-textarea"
