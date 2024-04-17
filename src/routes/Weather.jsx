@@ -21,6 +21,7 @@ const Weather = () => {
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
   const [dataSuggestions, setDataSuggestions] = useState([])
+  const [temp, setTemp] = useState(true)
   //   const [conditionChanged, setConditionChanged] = useState(false)
 
   const { t } = useTranslation()
@@ -105,6 +106,9 @@ const Weather = () => {
           setDataSuggestions(data)
         })
     }
+    if (e.target.value === '' && dataSuggestions.length > 0) {
+      setDataSuggestions([])
+    }
   }
   // Função para lidar com a tecla pressionada no campo de entrada de texto
 
@@ -179,19 +183,19 @@ const Weather = () => {
       if (moon_phase === 'New Moon' || moon_phase === 'New') {
         return iconConfig.moonNew
       } else if (moon_phase === 'Waxing Crescent') {
-        return iconConfig.moonWaxingCrescent
+        return iconConfig.waxingCrescent
       } else if (moon_phase === 'First Quarter') {
-        return iconConfig.moonFirstQuarter
+        return iconConfig.firstQuarter
       } else if (moon_phase === 'Waxing Gibbous') {
-        return iconConfig.moonWaxingGibbous
+        return iconConfig.waxingGibbous
       } else if (moon_phase === 'Waning Gibbous') {
         return iconConfig.wanningGibbous
       } else if (moon_phase === 'Third Quarter') {
-        return iconConfig.moonThirdQuarter
+        return iconConfig.thirdQuarter
       } else if (moon_phase === 'Waning Crescent') {
-        return iconConfig.moonWaningCrescent
+        return iconConfig.wanningCrescent
       } else {
-        return iconConfig.moonFull
+        return iconConfig.fullMoon
       }
     }
   }
@@ -337,6 +341,11 @@ const Weather = () => {
     scrollToNow(now)
   }, [weatherForecast, now])
 
+  const videoOptions = {
+    htmlvideo: {
+      playsInline: true,
+    },
+  }
   return (
     // <div className={`container-weather-${weatherBackground()}`}>
     <div className={`container-weather-transparent`}>
@@ -348,35 +357,35 @@ const Weather = () => {
             <Header />
             <div className="weather-screen">
               {weatherForecast ? (
-                <video
-                  key={weatherBackground()}
-                  autoPlay
-                  loop
-                  muted
-                  className="weather-video"
-                  playsInline
-                >
-                  <source
-                    src={
-                      weatherBackground() === 'cloudy'
-                        ? cloudy
-                        : weatherBackground() === 'daySunny'
-                        ? daySunny
-                        : weatherBackground() === 'dayClear'
-                        ? dayClear
-                        : weatherBackground() === 'rain'
-                        ? rain
-                        : weatherBackground() === 'night'
-                        ? night
-                        : thunder
-                    }
-                    type="video/mp4"
-                  />
-                </video>
+                <>
+                  <video
+                    key={weatherBackground()}
+                    autoPlay
+                    loop
+                    muted
+                    className="weather-video"
+                    playsInline={videoOptions}
+                  >
+                    <source
+                      src={
+                        weatherBackground() === 'cloudy'
+                          ? cloudy
+                          : weatherBackground() === 'daySunny'
+                          ? daySunny
+                          : weatherBackground() === 'dayClear'
+                          ? dayClear
+                          : weatherBackground() === 'rain'
+                          ? rain
+                          : weatherBackground() === 'night'
+                          ? night
+                          : thunder
+                      }
+                      type="video/mp4"
+                    />
+                  </video>
+                </>
               ) : (
-                <video autoPlay loop muted className="weather-video">
-                  <source src={night} type="video/mp4" />
-                </video>
+                <img className="img-temp" src={iconConfig.temp}></img>
               )}
 
               <div className="weather-input">
