@@ -15,7 +15,7 @@ const FeedbackClicks = () => {
   useEffect(() => {
     const fetchClicks = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/clicks');
+        const response = await axios.get('http://localhost:3000/api/clicks');
         const sortedClicks = response.data.sort((a, b) => {
           return b.clicks - a.clicks;
         });

@@ -34,7 +34,7 @@ const Feedback = () => {
       alert('Name, description and rating are required fields.');
     } else {
       axios
-        .post('http://localhost:5000/feedback', {
+        .post('http://localhost:5000/api/feedback', {
           name: feedbackName,
           description: feedbackDescription,
           rating: selectedRate,

@@ -12,7 +12,7 @@ const Feedbacks = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/feedbacks');
+        const response = await axios.get('http://localhost:5000/api/feedbacks');
         setFeedbacks(response.data);
       } catch (err) {
         console.log('Erro ao buscar feedbacks: ' + err);
