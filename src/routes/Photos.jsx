@@ -26,6 +26,7 @@ export default function Photos() {
       iconConfig.photoHTML2,
       iconConfig.photoCSS,
       iconConfig.photoReact,
+      iconConfig.photoTS,
     ]
 
     setPhotos(originalPhotos)

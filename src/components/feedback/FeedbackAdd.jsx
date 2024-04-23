@@ -1,18 +1,17 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import HeaderBlack from "../HeaderBlack";
-import "../../styles/feedback.css";
-import axios from "axios";
-import iconConfig from "../iconConfig";
-import nice from "../../assets/icons/nice.gif";
-import { useTranslation } from "react-i18next";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import HeaderBlack from '../HeaderBlack';
+import '../../styles/feedback.css';
+import axios from 'axios';
+import iconConfig from '../iconConfig';
+import nice from '../../assets/icons/nice.gif';
+import { useTranslation } from 'react-i18next';
 
 const Feedback = () => {
   const [selectedRate, setSelectedRate] = useState(null);
-  const [feedbackName, setFeedbackName] = useState("");
-  const [feedbackDescription, setFeedbackDescription] = useState("");
+  const [feedbackName, setFeedbackName] = useState('');
+  const [feedbackDescription, setFeedbackDescription] = useState('');
   const [success, setSuccess] = useState(false);
-  const [setError] = useState("");
 
   const { t } = useTranslation();
 
@@ -32,29 +31,28 @@ const Feedback = () => {
 
   const handleSubmit = () => {
     if (!feedbackName || !feedbackDescription || !selectedRate) {
-      alert("Name, description and rating are required fields.");
+      alert('Name, description and rating are required fields.');
     } else {
       axios
-        .post("http://localhost:5000/feedbacks", {
+        .post('http://localhost:5000/feedback', {
           name: feedbackName,
           description: feedbackDescription,
           rating: selectedRate,
         })
         .then(() => {
           setSuccess(true);
-          setError("");
           setTimeout(() => {
             setSuccess(false);
           }, 6700);
           setTimeout(() => {
-            window.location.href = "/feedback";
+            window.location.href = '/feedback';
           }, 5500);
         })
         .catch((error) => {
-          setError(
-            "There was an error submitting feedback. Please try again later."
-          ); // Configura mensagem de erro
           setSuccess(false);
+          alert(
+            'There was an error submitting feedback. Please try again later.',
+          );
         });
     }
   };
@@ -64,19 +62,19 @@ const Feedback = () => {
       <div>
         <div className="screen ">
           <HeaderBlack />
-          <div className={`feedback-modal ${success ? "show" : ""}`}>
+          <div className={`feedback-modal ${success ? 'show' : ''}`}>
             <div className="feedback-modal-content">
               <img src={nice} alt="nice" />
-              <h3>{t("feedbackSubmmited")}</h3>
+              <h3>{t('feedbackSubmmited')}</h3>
             </div>
           </div>
 
           <div className="feedback-header">
-            <Link to={"/feedback"}>
+            <Link to={'/feedback'}>
               <img src={iconConfig.arrowBackBlue} alt="arrow-back-blue" />
             </Link>
             <img id="feedback-logo" src={iconConfig.feedbackLogo} alt="logo" />
-            <Link to={"/feedback"}>
+            <Link to={'/feedback'}>
               <img src={iconConfig.closefeedback} alt="close-feedback" />
             </Link>
           </div>
@@ -84,57 +82,57 @@ const Feedback = () => {
           <div className="feedback-person tblack">
             <div>
               <h3>Raiffe Moura</h3>
-              <p>{t("fullStackDev")}</p>
+              <p>{t('fullStackDev')}</p>
             </div>
             <img src={iconConfig.avatar} alt="person" />
           </div>
 
           <div className="feedback-questions tblack">
             <div className="feedback-question">
-              <h3>{t("howWasYourExperience")}</h3>
+              <h3>{t('howWasYourExperience')}</h3>
               <div className="feedback-rating">
                 <img
                   src={
-                    selectedRate === "A"
+                    selectedRate === 'A'
                       ? iconConfig.feedbackASelected
                       : iconConfig.feedbackA
                   }
                   alt="add-feedback"
-                  className={selectedRate === "A" ? "selected" : ""}
-                  onClick={() => handleImageClick("A")}
+                  className={selectedRate === 'A' ? 'selected' : ''}
+                  onClick={() => handleImageClick('A')}
                 />
                 <img
                   src={
-                    selectedRate === "B"
+                    selectedRate === 'B'
                       ? iconConfig.feedbackBSelected
                       : iconConfig.feedbackB
                   }
                   alt="add-feedback"
-                  className={selectedRate === "B" ? "selected" : ""}
-                  onClick={() => handleImageClick("B")}
+                  className={selectedRate === 'B' ? 'selected' : ''}
+                  onClick={() => handleImageClick('B')}
                 />
                 <img
                   src={
-                    selectedRate === "C"
+                    selectedRate === 'C'
                       ? iconConfig.feedbackCSelected
                       : iconConfig.feedbackC
                   }
                   alt="add-feedback"
-                  className={selectedRate === "C" ? "selected" : ""}
-                  onClick={() => handleImageClick("C")}
+                  className={selectedRate === 'C' ? 'selected' : ''}
+                  onClick={() => handleImageClick('C')}
                 />
               </div>
             </div>
           </div>
 
           <div className="feedback-textarea-box tblack">
-            <p>{t("yourHonestFeedback")}</p>
+            <p>{t('yourHonestFeedback')}</p>
             <textarea
               onChange={handleDescriptionChange}
               className="feedback-textarea tblack"
               placeholder="Enter your honest feedback here"
             ></textarea>
-            <p>{t("yourName")}</p>
+            <p>{t('yourName')}</p>
             <input
               onChange={handleNameChange}
               className="feedback-input-name"
@@ -146,14 +144,14 @@ const Feedback = () => {
             <div className="feedback-private">
               <Link
                 to={
-                  "https://api.whatsapp.com/send?phone=5583991669951&text=Ol%C3%A1%20Raiffe%2C%20cheguei%20aqui%20atrav%C3%A9s%20do%20seu%20portfol-IOS..."
+                  'https://api.whatsapp.com/send?phone=5583991669951&text=Ol%C3%A1%20Raiffe%2C%20cheguei%20aqui%20atrav%C3%A9s%20do%20seu%20portfol-IOS...'
                 }
               >
-                <p>{t("privateFeedback")}</p>
+                <p>{t('privateFeedback')}</p>
               </Link>
               <Link
                 to={
-                  "https://api.whatsapp.com/send?phone=5583991669951&text=Ol%C3%A1%20Raiffe%2C%20cheguei%20aqui%20atrav%C3%A9s%20do%20seu%20portfol-IOS..."
+                  'https://api.whatsapp.com/send?phone=5583991669951&text=Ol%C3%A1%20Raiffe%2C%20cheguei%20aqui%20atrav%C3%A9s%20do%20seu%20portfol-IOS...'
                 }
               >
                 <img src={iconConfig.privateChat} alt="chat" />
@@ -163,7 +161,7 @@ const Feedback = () => {
 
           <div className="feedback-submit-box">
             <button onClick={handleSubmit} className="feedback-submit">
-              {t("sendFeedback")}
+              {t('sendFeedback')}
             </button>
           </div>
         </div>

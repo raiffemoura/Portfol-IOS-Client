@@ -1,38 +1,37 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import iconConfig from '../iconConfig'
-import { Link } from 'react-router-dom'
-import FeedbackFooter from './FeedbackFooter'
-import HomeButtonFeedback from './HomeButtonFeedback'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import iconConfig from '../iconConfig';
+import { Link } from 'react-router-dom';
+import FeedbackFooter from './FeedbackFooter';
+import HomeButtonFeedback from './HomeButtonFeedback';
 
 const Feedbacks = () => {
-  const [feedbacks, setFeedbacks] = useState([])
-  const [showAllFeedbacks, setShowAllFeedbacks] = useState(true)
-  const [feedbackID, setFeedbackID] = useState(null)
-  const [ready, setReady] = useState(false)
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [showAllFeedbacks, setShowAllFeedbacks] = useState(true);
+  const [feedbackID, setFeedbackID] = useState(null);
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/feedbacks')
-        setFeedbacks(response.data)
+        const response = await axios.get('http://localhost:5000/feedbacks');
+        setFeedbacks(response.data);
       } catch (err) {
-        console.log('Erro ao buscar feedbacks: ' + err)
+        console.log('Erro ao buscar feedbacks: ' + err);
       }
-    }
-    fetchFeedbacks()
-  }, [])
+    };
+    fetchFeedbacks();
+  }, []);
 
   const limitString = (string, limit) => {
     if (string.length > limit) {
-      return string.substring(0, limit) + '...'
+      return string.substring(0, limit) + '...';
     }
-    return string
-  }
+    return string;
+  };
 
   const handleFeedbackID = (feedbackID) => {
-    setShowAllFeedbacks(!showAllFeedbacks)
-    setFeedbackID(feedbackID)
-  }
+    setShowAllFeedbacks(!showAllFeedbacks);
+    setFeedbackID(feedbackID);
+  };
 
   return (
     <div>
@@ -55,7 +54,8 @@ const Feedbacks = () => {
 
       <div className="feedback-container">
         {/* Renderização condicional dos feedbacks */}
-        <div
+
+        {/* <div
           style={{
             color: 'black',
             fontWeight: 'bold',
@@ -66,7 +66,8 @@ const Feedbacks = () => {
         >
           <p>Sem dados.</p>
           <p>App Feedback em contrução.</p>
-        </div>
+        </div> */}
+
         {showAllFeedbacks &&
           // Mapeamento e exibição dos feedbacks
 
@@ -113,14 +114,14 @@ const Feedbacks = () => {
                     <p>{feedback.description}</p>
                   </div>
                 </div>
-              )
+              ),
           )}
       </div>
       {/* Rodapé e botão de home */}
       <FeedbackFooter />
       <HomeButtonFeedback />
     </div>
-  )
-}
+  );
+};
 
-export default Feedbacks
+export default Feedbacks;

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import iconConfig from "../iconConfig";
-import HeaderBlack from "../HeaderBlack";
-import FeedbackFooter from "./FeedbackFooter";
-import HomeButtonFeedback from "./HomeButtonFeedback";
-import { useTranslation } from "react-i18next";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import iconConfig from '../iconConfig';
+import HeaderBlack from '../HeaderBlack';
+import FeedbackFooter from './FeedbackFooter';
+import HomeButtonFeedback from './HomeButtonFeedback';
+import { useTranslation } from 'react-i18next';
 
 const FeedbackClicks = () => {
   const [clicks, setClicks] = useState([]);
@@ -15,13 +15,13 @@ const FeedbackClicks = () => {
   useEffect(() => {
     const fetchClicks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/clicks");
+        const response = await axios.get('http://localhost:3000/clicks');
         const sortedClicks = response.data.sort((a, b) => {
           return b.clicks - a.clicks;
         });
         setClicks(sortedClicks);
       } catch (err) {
-        console.log("Erro ao buscar clicks: " + err);
+        console.log('Erro ao buscar clicks: ' + err);
       }
     };
     fetchClicks();
@@ -47,21 +47,21 @@ const FeedbackClicks = () => {
         <div className="screen ">
           <HeaderBlack />
           <div className="feedback-header">
-            <Link to={"/feedback"}>
-              {" "}
+            <Link to={'/feedback'}>
+              {' '}
               <img src={iconConfig.arrowBackBlue} alt="back" />
             </Link>
             <img id="feedback-logo" src={iconConfig.feedbackLogo} alt="logo" />
-            <Link to={"/thanks-for-your-feedback"}>
+            <Link to={'/thanks-for-your-feedback'}>
               <img src={iconConfig.addFeedback} alt="add-feedback" />
             </Link>
           </div>
           <div className="clicks">
             <div className="clicks-container">
-              <h4 className="tgray">{t("clicksCounter")}</h4>
+              <h4 className="tgray">{t('clicksCounter')}</h4>
               {clicks.length > 0 ? (
                 clicks.map((click) =>
-                  listApps(click.appName, click.clicks, click._id)
+                  listApps(click.appName, click.clicks, click._id),
                 )
               ) : (
                 <p>Nenhum dado disponível.</p>
