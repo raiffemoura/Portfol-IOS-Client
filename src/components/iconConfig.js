@@ -180,6 +180,7 @@ import photoHTML from '../assets/photosApp/html.png'
 import photoHTML2 from '../assets/photosApp/html2.png'
 import photoPS from '../assets/photosApp/ps.png'
 import photoCSS from '../assets/photosApp/css.png'
+import photoTS from '../assets/photosApp/TS.png'
 import photoConnect from '../assets/photosApp/connect.png'
 import send from '../assets/icons/send.png'
 import sendBlue from '../assets/icons/send-blue.png'
@@ -399,6 +400,7 @@ const iconConfig = {
   photoPS,
   photoHTML2,
   photoCSS,
+  photoTS,
   photoConnect,
   send,
   sendBlue,

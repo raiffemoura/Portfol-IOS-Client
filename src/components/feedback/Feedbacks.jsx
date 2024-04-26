@@ -9,11 +9,10 @@ const Feedbacks = () => {
   const [feedbacks, setFeedbacks] = useState([])
   const [showAllFeedbacks, setShowAllFeedbacks] = useState(true)
   const [feedbackID, setFeedbackID] = useState(null)
-  const [ready, setReady] = useState(false)
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/feedbacks')
+        const response = await axios.get('http://18.230.228.172:3000/feedbacks')
         setFeedbacks(response.data)
       } catch (err) {
         console.log('Erro ao buscar feedbacks: ' + err)
@@ -55,7 +54,8 @@ const Feedbacks = () => {
 
       <div className="feedback-container">
         {/* Renderização condicional dos feedbacks */}
-        <div
+
+        {/* <div
           style={{
             color: 'black',
             fontWeight: 'bold',
@@ -66,7 +66,8 @@ const Feedbacks = () => {
         >
           <p>Sem dados.</p>
           <p>App Feedback em contrução.</p>
-        </div>
+        </div> */}
+
         {showAllFeedbacks &&
           // Mapeamento e exibição dos feedbacks
 
