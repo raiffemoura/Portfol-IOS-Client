@@ -9,6 +9,7 @@ const Feedbacks = () => {
   const [feedbacks, setFeedbacks] = useState([])
   const [showAllFeedbacks, setShowAllFeedbacks] = useState(true)
   const [feedbackID, setFeedbackID] = useState(null)
+
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
@@ -54,20 +55,6 @@ const Feedbacks = () => {
 
       <div className="feedback-container">
         {/* Renderização condicional dos feedbacks */}
-
-        {/* <div
-          style={{
-            color: 'black',
-            fontWeight: 'bold',
-            fontSize: '20px',
-            marginLeft: '10px',
-            marginTop: '150px',
-          }}
-        >
-          <p>Sem dados.</p>
-          <p>App Feedback em contrução.</p>
-        </div> */}
-
         {showAllFeedbacks &&
           // Mapeamento e exibição dos feedbacks
 
