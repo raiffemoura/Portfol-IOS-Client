@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import iconConfig from '../iconConfig';
-import HeaderBlack from '../HeaderBlack';
-import FeedbackFooter from './FeedbackFooter';
-import HomeButtonFeedback from './HomeButtonFeedback';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
+import iconConfig from '../iconConfig'
+import HeaderBlack from '../HeaderBlack'
+import FeedbackFooter from './FeedbackFooter'
+import HomeButtonFeedback from './HomeButtonFeedback'
+import { useTranslation } from 'react-i18next'
 
 const FeedbackStatistics = () => {
-  const [feedbacks, setFeedbacks] = useState([]);
+  const [feedbacks, setFeedbacks] = useState([])
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/feedbacks');
-        setFeedbacks(response.data);
+        const response = await axios.get('http://18.230.228.172:3000/feedbacks')
+        setFeedbacks(response.data)
       } catch (err) {
-        console.log('Erro ao buscar feedbacks: ' + err);
+        console.log('Erro ao buscar feedbacks: ' + err)
       }
-    };
-    fetchFeedbacks();
-  }, []);
+    }
+    fetchFeedbacks()
+  }, [])
 
-  const ratings = feedbacks.map((feedback) => feedback.rating);
-  const totalA = ratings.filter((rating) => rating === 'A').length;
-  const totalB = ratings.filter((rating) => rating === 'B').length;
-  const totalC = ratings.filter((rating) => rating === 'C').length;
-  const average = (totalA * 10 + totalB * 7.5 + totalC * 5) / ratings.length;
-  const roundedAverage = average.toFixed(2);
+  const ratings = feedbacks.map((feedback) => feedback.rating)
+  const totalA = ratings.filter((rating) => rating === 'A').length
+  const totalB = ratings.filter((rating) => rating === 'B').length
+  const totalC = ratings.filter((rating) => rating === 'C').length
+  const average = (totalA * 10 + totalB * 7.5 + totalC * 5) / ratings.length
+  const roundedAverage = average.toFixed(2)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <div className="container-feedback">
@@ -108,7 +108,7 @@ const FeedbackStatistics = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FeedbackStatistics;
+export default FeedbackStatistics
