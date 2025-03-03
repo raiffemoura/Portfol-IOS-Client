@@ -1,23 +1,23 @@
-import React, { useState, useRef } from 'react';
-import Header from '../components/Header';
-import HomeButton from '../components/HomeButton';
-import '../styles/reminders.css';
-import iconConfig from '../components/iconConfig';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useRef } from "react";
+import Header from "../components/Header";
+import HomeButton from "../components/HomeButton";
+import "../styles/reminders.css";
+import iconConfig from "../components/iconConfig";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Reminders() {
-  const [newTask, setNewTask] = useState('');
+  const [newTask, setNewTask] = useState("");
   const [allTasks, setAllTasks] = useState([]);
   const remindersTasksRefs = useRef([]);
-  //const [isMouseDown, setIsMouseDown] = useState(false);
-  //const [startX, setStartX] = useState(0);
-  //const [scrollLeft, setScrollLeft] = useState(0);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   const { t } = useTranslation();
 
   const format = (str) => {
-    return str.slice(0, 50) + '...';
+    return str.slice(0, 50) + "...";
   };
 
   const addNewTask = (newTask) => {
@@ -28,7 +28,7 @@ export default function Reminders() {
         completed: false,
       };
       setAllTasks([newTaskObject, ...allTasks]);
-      setNewTask('');
+      setNewTask("");
     } else if (newTask.length >= 55) {
       const newTaskObject = {
         id: allTasks.length + 1,
@@ -36,9 +36,9 @@ export default function Reminders() {
         completed: false,
       };
       setAllTasks([newTaskObject, ...allTasks]);
-      setNewTask('');
+      setNewTask("");
     } else {
-      alert(t('pleaseAddReminder'));
+      alert(t("pleaseAddReminder"));
     }
   };
 
@@ -55,7 +55,7 @@ export default function Reminders() {
             ...task,
           };
         }
-      }),
+      })
     );
   };
 
@@ -63,27 +63,7 @@ export default function Reminders() {
     setAllTasks(allTasks.filter((task) => task.id !== id));
   };
 
-  const handleTaskClick = (event, index) => {
-    // Verifica se o clique foi no toggle (input ou span)
-    if (
-      event.target.classList.contains('reminders-checkbox-custom') ||
-      event.target.classList.contains('reminders-checkbox')
-    ) {
-      return; // Sai da função e não faz a rolagem
-    }
-
-    const taskDiv = remindersTasksRefs.current[index];
-    if (taskDiv) {
-      const maxScrollLeft = taskDiv.scrollWidth - taskDiv.clientWidth;
-      const isAtEnd = taskDiv.scrollLeft >= maxScrollLeft - 5;
-      taskDiv.scrollTo({
-        left: isAtEnd ? 0 : maxScrollLeft,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  /*const handleMouseDown = (e, index) => {
+  const handleMouseDown = (e, index) => {
     setIsMouseDown(true);
     setStartX(e.pageX);
     const scrollLeft = remindersTasksRefs.current[index].scrollLeft;
@@ -100,7 +80,7 @@ export default function Reminders() {
 
   const handleMouseUp = () => {
     setIsMouseDown(false);
-  };*/
+  };
 
   const renderTasks = () => {
     const sortedTasks = allTasks.sort((a, b) => {
@@ -118,7 +98,9 @@ export default function Reminders() {
         key={task.id}
         className="reminders-task"
         ref={(element) => (remindersTasksRefs.current[index] = element)}
-        onClick={(e) => handleTaskClick(e, index)} // Agora passa o evento!
+        onMouseDown={(e) => handleMouseDown(e, index)}
+        onMouseMove={(e) => handleMouseMove(e, index)}
+        onMouseUp={handleMouseUp}
       >
         <label>
           <div>
@@ -136,7 +118,7 @@ export default function Reminders() {
               <div
                 className="reminders-task-text"
                 style={{
-                  textDecoration: task.completed ? 'line-through' : 'none',
+                  textDecoration: task.completed ? "line-through" : "none",
                 }}
               >
                 <p onClick={() => toggleTask(task.id)}>{task.task}</p>
@@ -146,7 +128,7 @@ export default function Reminders() {
               onClick={() => deleteTask(task.id)}
               className="reminders-trash"
             >
-              <p>{t('delete')}</p>
+              <p>{t("delete")}</p>
             </div>
           </div>
         </label>
@@ -160,10 +142,10 @@ export default function Reminders() {
         <Header />
         <div className="reminders-header">
           <div className="reminders-title">
-            <Link to={'/'}>
+            <Link to={"/"}>
               <img src={iconConfig.arrowBackBlue} alt="" />
             </Link>
-            <h2>{t('today')}</h2>
+            <h2>{t("today")}</h2>
           </div>
           <div className="reminders-buttons">
             <img src={iconConfig.remindersShare} alt="" />
@@ -171,12 +153,12 @@ export default function Reminders() {
           </div>
         </div>
         <div className="reminders-container">
-          <h2>{t('remindersTitle')}</h2>
+          <h2>{t("remindersTitle")}</h2>
           <div className="reminders-new-task">
             <input
               type="text"
               className="reminders-new-task-input"
-              placeholder={t('addReminder')}
+              placeholder={t("addReminder")}
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
             />

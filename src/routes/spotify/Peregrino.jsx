@@ -1,7 +1,7 @@
-import React from 'react';
-import HeaderSpotify from '../../components/spotify/HeaderSpotify.jsx';
-import SpotifyPeregrino from '../../components/spotify/SpotifyPeregrino.jsx';
-import '../../styles/spotify-peregrino.css';
+import React from "react";
+import HeaderSpotify from "../../components/spotify/HeaderSpotify.jsx";
+import SpotifyPeregrino from "../../components/spotify/SpotifyPeregrino.jsx";
+import "../../styles/spotify-peregrino.css";
 
 const Spotify = () => {
   return (
