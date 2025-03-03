@@ -78,7 +78,10 @@ body {
   align-items: center;
   width: 99%;
 }
-
+.app-space {
+  width: 81px;
+  height: 88px;
+}
 .apps-screen {
   display: flex;
   flex-direction: row;
